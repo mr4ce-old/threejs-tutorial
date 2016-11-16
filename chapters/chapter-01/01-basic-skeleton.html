@@ -138,9 +138,22 @@
         function renderScene() {
             stats.update();
 
+
+            /* Cube animation */
+
             cube.rotation.x += 0.02;
             cube.rotation.y += 0.02;
             cube.rotation.z += 0.02;
+
+            /* Cube animation */
+
+
+            /* Sphere animation */
+
+            sphere.position.x = 20 + ( 10 * (Math.cos(step += 0.01)));
+            sphere.position.y = 2 + ( 10 * Math.abs(Math.sin(step += 0.03)));
+
+            /* Sphere animation */
 
             requestAnimationFrame(renderScene);
             renderer.render(scene, camera);
