@@ -6,6 +6,10 @@
 
     <script src="../../lib/three.js"></script>
 
+    <script src="../../lib/stats.js"></script>
+
+    <script src="../../js/utils_logic.js"></script>
+
     <script src="http://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 
@@ -17,6 +21,8 @@
     </style>
 </head>
 <body>
+<div id="Stats-output"></div>
+
 <!--Div which will hold the Output -->
 <div id="WebGL-output">
 </div>
@@ -24,6 +30,9 @@
 <!--Javascript code that runs our Three.js examples -->
 <script type="text/javascript">
     $(function () {
+        /* Turn statistics on */
+        var stats = initStats();
+
         var scene = new THREE.Scene();
         var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
         var renderer = new THREE.WebGLRenderer();
@@ -127,8 +136,15 @@
 
         /* Rendering */
 
+        function renderScene() {
+            stats.update();
+            requestAnimationFrame(renderScene);
+            renderer.render(scene, camera);
+        }
+
         $('#WebGL-output').append(renderer.domElement);
-        renderer.render(scene, camera);
+        renderScene();
+
 
         /* Rendering */
     });
