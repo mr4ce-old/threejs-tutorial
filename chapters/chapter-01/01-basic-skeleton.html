@@ -31,6 +31,8 @@
         renderer.setClearColor(0xEEEEEE);
         renderer.setSize(window.innerWidth, window.innerHeight);
 
+        renderer.shadowMapEnabled = true;
+
         /* Axes */
 
         var axes = new THREE.AxisHelper(20);
@@ -51,6 +53,8 @@
         plane.position.y = 0;
         plane.position.z = 0;
 
+        plane.receiveShadow = true;
+
         scene.add(plane);
 
         /* Plane */
@@ -69,6 +73,8 @@
         cube.position.x = -4;
         cube.position.y = 3;
         cube.position.z = 0;
+
+        cube.castShadow = true;
 
         scene.add(cube);
 
@@ -89,6 +95,8 @@
         sphere.position.y = 4;
         sphere.position.z = 2;
 
+        sphere.castShadow = true;
+
         scene.add(sphere);
 
         /* Sphere */
@@ -97,6 +105,9 @@
 
         var spotLight = new THREE.SpotLight(0xFFFFFF);
         spotLight.position.set(-40, 60, 10);
+
+        spotLight.castShadow = true;
+
         scene.add(spotLight);
 
         /* SpotLight */
