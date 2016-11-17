@@ -27,6 +27,7 @@
 <body>
 <div id="Stats-output"></div>
 
+<div id="WebGl-output"></div>
 
 <script>
     $(function () {
@@ -62,6 +63,8 @@
         scene.add(ambientLight);
 
         /* Spot light */
+
+        $('#WebGL-output').append(renderer.domElement);
 
         renderer.render(scene, camera);
     });
