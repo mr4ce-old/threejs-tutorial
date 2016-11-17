@@ -135,6 +135,8 @@
 
         /* Rendering */
 
+        var step = 0;
+
         function renderScene() {
             stats.update();
 
@@ -149,8 +151,6 @@
 
 
             /* Sphere animation */
-
-            var step = 0;
 
             sphere.position.x = 20 + ( 10 * (Math.cos(step += 0.01)));
             sphere.position.y = 2 + ( 10 * Math.abs(Math.sin(step += 0.03)));
