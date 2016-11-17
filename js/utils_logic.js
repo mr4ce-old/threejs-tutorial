@@ -1,3 +1,5 @@
+/* Statistics */
+
 function initStats() {
     var stats = new Stats();
 
@@ -9,3 +11,20 @@ function initStats() {
 
     return stats;
 }
+
+/* Statistics */
+
+
+/* dat.GUI */
+
+var controls = new function () {
+    this.rotationSpeed = 0.02;
+    this.bouncingSpeed = 0.03;
+};
+
+var gui = new dat.GUI();
+
+gui.add(controls, 'rotationSpeed', 0, 0.5);
+gui.add(controls, 'bouncingSpeed', 0, 0.5);
+
+/* dat.GUI */

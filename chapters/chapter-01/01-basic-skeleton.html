@@ -143,17 +143,19 @@
 
             /* Cube animation */
 
-            cube.rotation.x += 0.02;
-            cube.rotation.y += 0.02;
-            cube.rotation.z += 0.02;
+            cube.rotation.x += controls.rotationSpeed;
+            cube.rotation.y += controls.rotationSpeed;
+            cube.rotation.z += controls.rotationSpeed;
 
             /* Cube animation */
 
 
             /* Sphere animation */
 
-            sphere.position.x = 20 + ( 10 * (Math.cos(step += 0.01)));
-            sphere.position.y = 2 + ( 10 * Math.abs(Math.sin(step += 0.03)));
+            step += controls.bouncingSpeed;
+
+            sphere.position.x = 20 + ( 10 * (Math.cos(step)));
+            sphere.position.y = 2 + ( 10 * Math.abs(Math.sin(step)));
 
             /* Sphere animation */
 
