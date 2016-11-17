@@ -36,6 +36,9 @@
 
         var renderer = new THREE.WebGLRenderer();
 
+        renderer.setClearColor(0xEEEEEE);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
         /* Flat */
 
         var planeGeometry = new THREE.PlaneGeometry(60, 40, 1, 1);
