@@ -33,6 +33,7 @@
         var scene = new THREE.Scene();
         var camera = new THREE.PerspectiveCamera(45, window.innerWidth / innerHeight, 0.1, 1000);
 
+        var renderer = new THREE.WebGLRenderer();
 
         /* Flat */
 
@@ -61,6 +62,8 @@
         scene.add(ambientLight);
 
         /* Spot light */
+
+        renderer.render(scene, camera);
     });
 </script>
 </body>
