@@ -12,6 +12,8 @@
 
     <script src="../../js/utils_logic.js"></script>
 
+    <script src="../../js/01-01-cube-logic.js"></script>
+
     <script src="http://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 
@@ -25,5 +27,41 @@
 <body>
 <div id="Stats-output"></div>
 
+
+<script>
+    $(function () {
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(45, window.innerWidth / innerHeight, 0.1, 1000);
+
+
+        /* Flat */
+
+        var planeGeometry = new THREE.PlaneGeometry(60, 40, 1, 1);
+        var planeMaterial = new THREE.MeshLambertMaterial({color: 0xFFFFFF});
+        var plane = new THREE.Mesh(planeGeometry, planeMaterial);
+
+        scene.add(plane);
+
+        /* Flat */
+
+
+        /* Ambient light */
+
+        var ambientLight = new THREE.AmbientLight(0x0c0c0c);
+
+        scene.add(ambientLight);
+
+        /* Ambient light */
+
+
+        /* Spot light */
+
+        var spotLight = new THREE.SpotLight();
+
+        scene.add(ambientLight);
+
+        /* Spot light */
+    });
+</script>
 </body>
 </html>
